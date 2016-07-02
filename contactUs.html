@@ -301,8 +301,8 @@
 
     <div class="container">
         <div class="row">
-            <div class="col-md-5">
-                <img class="center-block" src="/Images/contact-us.jpg" alt="Contact Us" />
+            <div class="col-lg-12">
+                <img class="data-img" src="/Images/contact-us.jpg" alt="Contact Us"  data-sml="img/400x320.jpg" data-med="img/800x640.jpg" data-lrg="img/1000x800.jpg" />
             </div>
             <div class="col-md-7">
                 <div class="panel panel-default">
@@ -356,6 +356,8 @@
 
     <script src="js/jquery.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="data-img.js"></script> 
     <script>
         function validateText(id) {
             if ($("#" + id).val() == null || $("#" + id).val() == "") {
@@ -374,6 +376,19 @@
                 return true;
             }
         }
+
+
+
+        $(function () {
+            $('.data-img').dataImg({
+                sml: 400, // The breakpoint at which the small file will be shown
+                med: 800, // The breakpoint at which the medium file will be shown
+                lrg: 1000, // The breakpoint at which the largest file will be shown, this size will load if screen width is above this
+                resize: true, // true/false as to whether this will work on browser resize
+                bgImg: true
+            });
+        });
+
 
         $(document).ready(
             function () {
